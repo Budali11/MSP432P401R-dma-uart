@@ -79,7 +79,6 @@ Bsp/Src/uart.c \
 Bsp/Src/wdt_a.c\
 Core/Src/startup_msp432p401r_gcc.c \
 Core/Src/system_msp432p401r.c \
-Bus/IIC/Src/iic_bus.c \
 User/Src/user_periph.c \
 User/Src/syscalls.c \
 User/Src/user_uart.c \
@@ -91,7 +90,6 @@ C_SOURCES += $(C_DEVICE_SOURCES)
 
 # exclude file
 EXCLUDE = \
-Bus/IIC/Src/iic_bus.c \
 Bsp/Src/dma.c \
 Bsp/Src/i2c.c \
 Bsp/Src/comp_e.c \
@@ -118,7 +116,6 @@ C_INCLUDES = \
 -ICore/Include/CMSIS \
 -IBsp/Inc \
 -IUser/Inc \
--IBus/IIC/Inc \
 
 #lib link
 LIB = -lc -lm -lnosys \
@@ -132,7 +129,6 @@ CCFLAGS = -c -g $(MCU) $(C_DEFS) $(C_INCLUDES) -Wall#
 VPATH = \
 Core/Include:Core/Include/CMSIS:Bsp/Inc:User/Inc:\
 Bsp/Src:Core/Src:User/Src:\
-Bus/IIC/Src:\
 
 OBJECTS = $(addprefix $(BUILD_DIR)/,$(notdir $(C_EXCLUDED:.c=.o)))
 
